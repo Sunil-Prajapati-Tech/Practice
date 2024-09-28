@@ -100,7 +100,7 @@ ps -ejH
 ps -ejH | grep httpd
 ps -l pidi
 
-done--systemctl status httpd
+systemctl status httpd
 systemctl status ssh
 systemctl start ssh
 systemctl restart ssh
@@ -140,13 +140,11 @@ file /etc/ssh/sshd_config
 nohup process &    ----nohup.out ---logging or output
 nohup process > /dev/null2>&1 &
 
-
 jobs
 bg
 fg
 bg %1
 fg %2
-
 
 nice (priotity from -20 to 19)
 
@@ -167,28 +165,25 @@ free -h
 free -h -s3
 free -h -c4
 
-
-
-done--du
-done--df
-done--free
-done--clear
-done--cd
-done--ls -lrt | tail
-done--cp -r
-done--rm -rf
-done--mkdir
-done--tail -f
-done--head -f
-done--ps -ef | grep -i "process name"
-done--netstat -apeen | grep -i "port number"
-done--ssh
-done--nohup (temporary script run)
-done--jobs
-done--bg
-done--fg
-done--nice
-
+du
+df
+free
+clear
+cd
+ls -lrt | tail
+cp -r
+rm -rf
+mkdir
+tail -f
+head -f
+ps -ef | grep -i "process name"
+netstat -apeen | grep -i "port number"
+ssh
+nohup (temporary script run)
+jobs
+bg
+fg
+nice
 
 awk options 'selection criteria' {action} input_file
 
@@ -215,18 +210,8 @@ awk -F "|" '$5 > 5000 && $4 == "Technology" {count++; print count,$1,$2,$3}' emp
 awk -F "|" 'NR!5 {print "line No ", NR, " has ",NF, " column" }' emp_ns.txt
 --------------------------------------------------------------------------------------------------------------------
 awk using BEGIN and END
-
 awk -F "|" 'BEGIN {variable declartion} {processing} END {execution}' emp_ns.txt
-
 awk -F "|" 'BEGIN {count=0} {count++;} END {print "Total no of lines: " , count;}' emp_ns.txt
-
-
-
-
-
-
-
-
 
 sed -i "s/abc/def/g" "filename
 vim ( gg, g, dd, p)
@@ -256,25 +241,12 @@ grep -s "line" file1.txt  ---this will suppress the error message
 grep -x "end" file1.txt ---for searching entire line
 grep "[pP]" file1.txt
 
-
-
-
-
-
-
-
-
-
-
-
-
 scp "filename"@"hostname with path"
 sftp
 
-done--echo $?  ---status of last command
+echo $?  ---status of last command
 
-
-done--chmod -- change mode
+chmod -- change mode
 r--read,w--write,x--execute
 
 file owner,group,others (everyone else)
@@ -286,7 +258,6 @@ symbolic (text),numeric (octal),reference
 chmod a+x file1.txt
 chmod a-x file1.txt
 chmod u=rwx,g=rw,o=r file1.txt (u-current user, g-group, o-others, a-all)
-
 
 0 - no permission
 1 - execute
@@ -301,30 +272,25 @@ chmod 77 file1.txt
 --> this will grant read, write and execute permission to group and other
 --> it will considered as 077
 
-
-done--chown   --- change owner
+chown   --- change owner
 chown -c nick file1.txt
 chown nick:nick file1.txt  --this will change both owner and group
 
-done--chgrp	--- change in group
+chgrp	--- change in group
 chgrp -c nick file1.txt
 
 getent group  -- to check users under group
 
-done--id--to see the details of user
+id--to see the details of user
 id sunil
 
-
-
-done--wc  --->word count
+wc  --->word count
 wc  filename
 wc -l filename
 wc -c filename
 wc -w filename
 
-
-
-done--diff - ibcw file1 file2   (i - allow case sensible, b - between files in context form, c - for ignoring case, w - ignoring white space)
+diff - ibcw file1 file2   (i - allow case sensible, b - between files in context form, c - for ignoring case, w - ignoring white space)
 diff first.txt second.txt
 diff -c first.txt second.txt
 diff -s first.txt second.txt  ---
@@ -335,18 +301,16 @@ colordiff -c first.txt second.txt
 colordiff -s first.txt second.txt  ---
 colordiff -u first.txt second.txt  ---
 
-
-
-done--sleep 3   ---> by default it is sec
+sleep 3   ---> by default it is sec
 sleep 10s ---> seconds
 sleep 10m ---> minutes
 sleep 10h ---> hours
 sleep 10d ---> days
 
-done--cal --->calender
+cal --->calender
 cal august 2021
 
-done--ping - meaning packet internet groper
+ping - meaning packet internet groper
 ping www.google.com
 ping 198.0.0.0
 ping -c 5 www.google.com ---> for sending on 5 packets
